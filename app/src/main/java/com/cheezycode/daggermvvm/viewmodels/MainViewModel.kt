@@ -6,11 +6,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.cheezycode.daggermvvm.models.Product
 import com.cheezycode.daggermvvm.repository.ProductRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(private val repository: ProductRepository,
-        private val randomize: Randomize) : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(private val repository: ProductRepository) : ViewModel() {
 
     val productsLiveData : LiveData<List<Product>>
     get() = repository.products
@@ -23,8 +24,4 @@ class MainViewModel @Inject constructor(private val repository: ProductRepositor
 
 }
 
-class Randomize @Inject constructor(){
-    fun doAction(){
-        Log.d("CHEEZYCODE", "Random Action")
-    }
-}
+
