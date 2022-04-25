@@ -42,6 +42,8 @@ class MainActivity : AppCompactActivity(){
     }
 }
 
+# Modules
+It is a method a method by which we can create objects.
 
 
 # @Provides
@@ -49,6 +51,14 @@ class MainActivity : AppCompactActivity(){
 # @InstallIn
 
 # @Binds
+when ever we want to bind interface with implementation we use @Bind annotation
+
+# Qualifier (@Named("_name_"))
+it is a tag 
+
+# @HiltViewModel
+we have to annote or viewModel with @HiltViewModel and also with @Inject so that hilt can understand and create the requied objects from view model.
+
 
 
 
